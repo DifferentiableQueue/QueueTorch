@@ -35,7 +35,7 @@ network = torch.tensor([[1.]])
 mu = torch.tensor([[1.0]])
 h = torch.tensor([1.])
 
-dq = QueuingNetwork(network, mu, h, arrival_rates, inter_arrival_dists, service_dists, batch = 1, temp = 0.5)
+dq = env.QueuingNetwork(network, mu, h, arrival_rates, inter_arrival_dists, service_dists, batch = 1, temp = 0.5)
 
 # Initialize environment
 obs, state = dq.reset(seed = 42)
