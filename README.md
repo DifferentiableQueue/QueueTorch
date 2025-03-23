@@ -27,7 +27,7 @@ import queuetorch as qt
 import queuetorch.env as env
 
 # Setup M/M/1 queue
-arrival_rates = lambda rng, t, batch: rho
+arrival_rates = lambda rng, t, batch: 0.9
 inter_arrival_dists = lambda state, batch: state.exponential(1, (batch, 1))
 service_dists = lambda state, batch, t: state.exponential(1, (batch, 1))
 
@@ -35,11 +35,11 @@ network = torch.tensor([[1.]])
 mu = torch.tensor([[1.0]])
 h = torch.tensor([1.])
 
-dq = QueuingNetwork(network, mu, h, arrival_rates, inter_arrival_dists, service_dists, batch = batch, temp = 0.5)
+dq = QueuingNetwork(network, mu, h, arrival_rates, inter_arrival_dists, service_dists, batch = 1, temp = 0.5)
 
 # Initialize environment
 obs, state = dq.reset(seed = 42)
-total_cost = torch.tensor([[0.]]*batch)
+total_cost = torch.tensor([[0.]])
     
 # Obtain Steady State
 for _ in trange(10000):
