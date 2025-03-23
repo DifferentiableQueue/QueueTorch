@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=40.8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# Do not add spaces around the '=' sign for any of the fields 
+# preceeded by a marker comment as it affects the publish workflow. 
+#replace_package_name_marker
+name="queuetorch"
+#replace_package_version_marker
+version="0.0.1"
+description = "QueueTorch"
+readme = "README.md"
+authors = [{ name = "Ethan Che", email = "ewc2119@columbia.edu" }]
+license = { text = "MIT License" }
+requires-python = ">=3.9, <3.13"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3", # removed 3.8
+    "Programming Language :: Python :: 3.9",
+]
+# We have both project and tool.poetry.dependencies. Should we remove one?
+# tool.poetry.dependencies is a convenience thing for poetry users.
+# project dependencies function similarly to requirements.txt,
+# `pip install .` will pull from pyproject.toml dependencies
+dependencies = [
+    "numpy==1.26.4",
+    "scipy==1.11.4",
+    "cvxpy==1.4.2",
+    "torch==2.2.0",
+    "matplotlib==3.7.2",
+    "ipykernel",
+    "yaml",
+    "tqdm",
+    "typing_extensions",
+    "pathos"
+]
+
+[tool.setuptools.packages.find]
+include = ["queuetorch"]
+namespaces = false

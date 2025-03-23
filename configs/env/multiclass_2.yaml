@@ -1,0 +1,14 @@
+name: 'multiclass'
+lam_type: 'constant'
+lam_params: {val: [0.5, 0.4]}
+network: [[1, 1]]
+mu: [[1, 1]]
+h: [2,1]
+init_queues: [0, 0]
+queue_event_options: [[1., 0.], [0., 1.],
+                      [-1., 0.], [0., -1.],]
+train_T: 20000
+test_T: 20000
+num_pool: 1
+
+  

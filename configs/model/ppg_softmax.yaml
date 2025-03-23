@@ -1,0 +1,33 @@
+name: 'ppg_softmax'
+env:
+  device: 'cpu'
+  env_temp: 0.1
+  straight_through_min: False
+  model_seed: 33
+  test_seed: 42
+  train_seed: null
+  print_grads: True
+  test_restart: True
+  test_freq: 1
+  train_restart: True
+param:
+  layers: 3
+  width: 128
+  f_time: False
+opt:
+  num_epochs: 100
+  train_batch: 1
+  test_batch: 100
+  lr: 0.0003
+  betas: [0.8, 0.9]
+  grad_clip_norm: 1.0
+  threshold: None
+policy:
+  test_policy: 'softmax'
+  randomize: True
+  train_policy: 'softmax'
+plot:
+  plot_policy_curve: True
+  inds: [0,1]
+  val_inds: [0, 0]
+checkpoint: null

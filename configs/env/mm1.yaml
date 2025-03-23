@@ -1,0 +1,14 @@
+name: 'mm1'
+lam_type: 'constant'
+lam_params: {val: [0.9]}
+network: [[1]]
+mu: [[1]]
+h: [1]
+init_queues: [0]
+queue_event_options: [[1.],
+                      [-1.]]
+train_T: 30000
+test_T: 30000
+num_pool: 1
+
+  
