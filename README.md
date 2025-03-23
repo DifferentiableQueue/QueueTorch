@@ -55,3 +55,15 @@ steady_state_mean = torch.mean(total_cost / obs.time)
 ```
 
 See `notebooks/criss_cross.ipynb` to train a neural policy to control the criss-cross network. 
+
+## Policy Training
+
+Environment config files are saved in `/configs/env/` and policy config files (e.g. learning rate, neural net architecture parameters, etc.) are saved in `/configs/model/`. For an environment specified by `ENV.yaml` and model specified by `MODEL.yaml`, train a policy as follows:
+
+```
+cd train
+python3 ./train_policy.py -e=ENV.yaml -m=MODEL.yaml
+```
+
+Model checkpoints are saved in the `model` directory, and if applicable, switching plots are saved
+in the `plots` directory.
