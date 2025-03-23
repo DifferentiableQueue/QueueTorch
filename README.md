@@ -17,6 +17,7 @@ Ensure you have Python and build installed, then install the necessary dependenc
 
 ```
 python3 -m build
+python3 -m pip install .
 ```
 
 ## 🎬 Quick Start
