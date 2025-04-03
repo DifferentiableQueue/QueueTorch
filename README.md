@@ -1,9 +1,10 @@
-<img width="350" src="./assets/queue_torch_light2.png" alt="logo" />
+<!-- <img width="350" src="./assets/queue_torch_light2.png" alt="logo" /> -->
+<img width="350" src="./assets/queuetorch_light.png" alt="logo" />
 <hr/>
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-**QueueTorch** is a PyTorch-based package for differentiable queuing network control. It provides a flexible and efficient framework for modeling, simulating, and optimizing queuing systems where reinforcement learning (RL) policies can be learned via direct back-propagation.
+**QueueTorch** is a PyTorch-based package for differentiable queuing network control. It provides a flexible and efficient framework for modeling, simulating, and optimizing queuing systems where reinforcement learning (RL) policies can be learned via direct backpropagation.
 
 ## 🚀 Features
 
