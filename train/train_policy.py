@@ -103,10 +103,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # load config
-    with open(f'../configs/env/{args.e}', 'r') as f:
+    with open(f'./configs/env/{args.e}', 'r') as f:
         env_config = yaml.safe_load(f)
 
-    with open(f'../configs/model/{args.m}', 'r') as f:
+    with open(f'./configs/model/{args.m}', 'r') as f:
         model_config = yaml.safe_load(f)
     
     name = env_config['name']
@@ -125,7 +125,7 @@ if __name__ == '__main__':
     else:
         env_type = name
     if env_config['network'] is None:
-        network = np.load(f'../env_data/{env_type}/{env_type}_network.npy')
+        network = np.load(f'./env_data/{env_type}/{env_type}_network.npy')
     else:
         network = env_config['network']
     network = torch.tensor(network).float()
@@ -142,7 +142,7 @@ if __name__ == '__main__':
     print(f'model: {model_name}')
 
     checkpoint = model_config['checkpoint']
-    checkpoint_dir = f"../models/{name}/{model_name}"
+    checkpoint_dir = f"./models/{name}/{model_name}"
     if not os.path.exists(checkpoint_dir):
         os.makedirs(checkpoint_dir)
 
@@ -263,7 +263,7 @@ if __name__ == '__main__':
 
             if device == 'cpu':
                 # Plot
-                fig_dir = f'../plot/{name}/{model_name}'
+                fig_dir = f'./plot/{name}/{model_name}'
                 if not os.path.exists(fig_dir):
                     os.makedirs(fig_dir)
                 if model_config['plot']['plot_policy_curve']:
@@ -363,8 +363,8 @@ if __name__ == '__main__':
                             'train_loss': float(torch.mean(total_cost / state.time)),
                             'test_loss_std': test_loss_std})
         
-        if not os.path.exists('../loss/'):
-            os.makedirs('../loss/')
-        with open(f'../loss/{name}_{model_name}.json', 'w') as f:
+        if not os.path.exists('./loss/'):
+            os.makedirs('./loss/')
+        with open(f'./loss/{name}_{model_name}.json', 'w') as f:
             json.dump(test_loss, f)
 
