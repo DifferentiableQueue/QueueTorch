@@ -31,7 +31,7 @@ dependencies = [
     "scipy==1.11.4",
     "cvxpy==1.4.2",
     "torch==2.2.0",
-    "matplotlib==3.7.2",
+    "matplotlib",
     "notebook",
     "ipykernel",
     "pyyaml",
